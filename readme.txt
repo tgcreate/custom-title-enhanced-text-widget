@@ -1,4 +1,4 @@
-=== Enhanced Text Widget ===
+=== Custom Title Enhanced Text Widget ===
 Contributors: bostondv, tgcreate
 Donate link: http://pomelodesign.com/donate/
 Tags: widget, clickable, linkable, linked title, text, php, javascript, flash, linked title text, span br title, linked, text widget, php widget, link widget title, bare widget, widget shortcodes
@@ -32,7 +32,7 @@ Fork or contribute on [Github](https://github.com/bostondv/enhanced-text-widget)
 == Installation ==
 
 1. Download and extract the zip archive
-2. Upload `enhanced-text-widget` folder to `/wp-content/plugins/`
+2. Upload `custom-title-enhanced-text-widget` folder to `/wp-content/plugins/`
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Add the widget to a sidebar and configure the options as desired
 
