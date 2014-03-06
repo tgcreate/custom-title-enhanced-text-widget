@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Custom Title Widget
+Plugin Name: Custom Title Enhanced Text Widget
 Description: Modification of the Enhanced Text Widget: http://wordpress.org/plugins/enhanced-text-widget/ version 1.4.3.
 Version: 1.0
 Author: Boston Dell-Vandenberg, mods done by Tim Gallant
