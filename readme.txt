@@ -1,18 +1,18 @@
 === Enhanced Text Widget ===
-Contributors: bostondv
+Contributors: bostondv, tgcreate
 Donate link: http://pomelodesign.com/donate/
-Tags: widget, clickable, linkable, linked title, text, php, javascript, flash, linked title text, linked, text widget, php widget, link widget title, bare widget, widget shortcodes
+Tags: widget, clickable, linkable, linked title, text, php, javascript, flash, linked title text, span br title, linked, text widget, php widget, link widget title, bare widget, widget shortcodes
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.4.3
+Tested up to: 3.8.1
+Stable tag: 1.4.3.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-An enhanced version of the default text widget where you may have Text, HTML, CSS, JavaScript, Flash, WordPress Shortcodes and/or PHP as content with linkable widget title.
+An enhanced version of the default text widget where you may have Text, HTML, CSS, JavaScript, Flash, WordPress Shortcodes and/or PHP as content with linkable widget title. This fork adds ability to add br and span tags to title.
 
 == Description ==
 
-An enhanced version of the default text widget where you may have Text, HTML, CSS, JavaScript, Flash, WordPress Shortcodes and/or PHP as content with linkable widget title.
+An enhanced version of the default text widget where you may have Text, HTML, CSS, JavaScript, Flash, WordPress Shortcodes and/or PHP as content with linkable widget title. This fork adds ability to use br and span tags in title.
 
 Options:
 
@@ -46,6 +46,9 @@ Nothing right now.
 
 == Upgrade Notice ==
 
+=1.3.4.1 =
+This adds option to use br and span HTML tags in title.
+
 = 1.3.4 =
 This adds option to hide the title
 
@@ -59,9 +62,6 @@ This adds a CSS class parameter to each widget.
 This is the initial release.
 
 == Changelog ==
-
-= 1.4.3 =
-* Adds Italian translation
 
 = 1.4.2 =
 * Removes widget caching
