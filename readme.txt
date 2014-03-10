@@ -1,4 +1,4 @@
-=== Custom Title Enhanced Text Widget ===
+=== Enhanced Text Widget ===
 Contributors: bostondv, tgcreate
 Donate link: http://pomelodesign.com/donate/
 Tags: widget, clickable, linkable, linked title, text, php, javascript, flash, linked title text, span br title, linked, text widget, php widget, link widget title, bare widget, widget shortcodes
