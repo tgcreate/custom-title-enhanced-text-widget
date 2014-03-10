@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Custom Title Enhanced Text Widget
-Description: Modification of the Enhanced Text Widget: http://wordpress.org/plugins/enhanced-text-widget/ version 1.4.3.
+Plugin Name: Enhanced Text Widget
+Description: http://wordpress.org/plugins/enhanced-text-widget/ version 1.4.3.1.
 Version: 1.0
-Author: Boston Dell-Vandenberg, mods done by Tim Gallant
+Author: Boston Dell-Vandenberg
 License: GPL2
 
 This program is free software; you can redistribute it and/or modify
@@ -21,16 +21,16 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-class CustomTitleWidget extends WP_Widget {
+class EnhancedTextWidget extends WP_Widget {
 
     /**
      * Widget construction
      */
     function __construct() {
-        $widget_ops = array('classname' => 'widget_text custom-title-widget', 'description' => __('A mod of the Enhanced Text Widget to add br and span tags to title', 'customtitle'));
+        $widget_ops = array('classname' => 'widget_text enhanced-text-widget', 'description' => __('Text, HTML, CSS, PHP, Flash, JavaScript, Shortcodes', 'enhancedtext'));
         $control_ops = array('width' => 400, 'height' => 350);
-        parent::__construct('CustomTitleWidget', __('Custom Title', 'customtitle'), $widget_ops, $control_ops);
-        load_plugin_textdomain('customtitle', false, basename( dirname( __FILE__ ) ) . '/languages' );
+        parent::__construct('enhancedtextWidget', __('Enhanced Text', 'enhancedtext'), $widget_ops, $control_ops);
+        load_plugin_textdomain('enhancedtext', false, basename( dirname( __FILE__ ) ) . '/languages' );
     }
 
     /**
@@ -47,7 +47,7 @@ class CustomTitleWidget extends WP_Widget {
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance);
         $titleUrl = empty($instance['titleUrl']) ? '' : $instance['titleUrl'];
         $cssClass = empty($instance['cssClass']) ? '' : $instance['cssClass'];
-        $text = apply_filters('widget_custom_title', $instance['text'], $instance);
+        $text = apply_filters('widget_enhanced_text', $instance['text'], $instance);
         $hideTitle = !empty($instance['hideTitle']) ? true : false;
         $newWindow = !empty($instance['newWindow']) ? true : false;
         $filterText = !empty($instance['filter']) ? true : false;
@@ -137,43 +137,43 @@ else {
         </style>
 
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'customtitle'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'enhancedtext'); ?>:</label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('titleUrl'); ?>"><?php _e('URL', 'customtitle'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('titleUrl'); ?>"><?php _e('URL', 'enhancedtext'); ?>:</label>
             <input class="widefat" id="<?php echo $this->get_field_id('titleUrl'); ?>" name="<?php echo $this->get_field_name('titleUrl'); ?>" type="text" value="<?php echo $titleUrl; ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('cssClass'); ?>"><?php _e('CSS Classes', 'customtitle'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('cssClass'); ?>"><?php _e('CSS Classes', 'enhancedtext'); ?>:</label>
             <input class="widefat" id="<?php echo $this->get_field_id('cssClass'); ?>" name="<?php echo $this->get_field_name('cssClass'); ?>" type="text" value="<?php echo $cssClass; ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Content', 'customtitle'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Content', 'enhancedtext'); ?>:</label>
             <textarea class="widefat monospace" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
         </p>
 
         <p>
-            <input id="<?php echo $this->get_field_id('hideTitle'); ?>" name="<?php echo $this->get_field_name('hideTitle'); ?>" type="checkbox" <?php checked(isset($instance['hideTitle']) ? $instance['hideTitle'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('hideTitle'); ?>"><?php _e('Do not display the title', 'customtitle'); ?></label>
+            <input id="<?php echo $this->get_field_id('hideTitle'); ?>" name="<?php echo $this->get_field_name('hideTitle'); ?>" type="checkbox" <?php checked(isset($instance['hideTitle']) ? $instance['hideTitle'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('hideTitle'); ?>"><?php _e('Do not display the title', 'enhancedtext'); ?></label>
         </p>
 
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id('newWindow'); ?>" name="<?php echo $this->get_field_name('newWindow'); ?>" <?php checked(isset($instance['newWindow']) ? $instance['newWindow'] : 0); ?> />
-            <label for="<?php echo $this->get_field_id('newWindow'); ?>"><?php _e('Open the URL in a new window', 'customtitle'); ?></label>
+            <label for="<?php echo $this->get_field_id('newWindow'); ?>"><?php _e('Open the URL in a new window', 'enhancedtext'); ?></label>
         </p>
 
         <p>
-            <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs to the content', 'customtitle'); ?></label>
+            <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs to the content', 'enhancedtext'); ?></label>
         </p>
 
         <p>
-            <input id="<?php echo $this->get_field_id('bare'); ?>" name="<?php echo $this->get_field_name('bare'); ?>" type="checkbox" <?php checked(isset($instance['bare']) ? $instance['bare'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('bare'); ?>"><?php _e('Do not output before/after_widget/title', 'customtitle'); ?></label>
+            <input id="<?php echo $this->get_field_id('bare'); ?>" name="<?php echo $this->get_field_name('bare'); ?>" type="checkbox" <?php checked(isset($instance['bare']) ? $instance['bare'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('bare'); ?>"><?php _e('Do not output before/after_widget/title', 'enhancedtext'); ?></label>
         </p>
 
-        <p class="credits"><small><?php _e('Developed by', 'customtitle'); ?> <a href="http://pomelodesign.com">Pomelo Design</a></small></p>
+        <p class="credits"><small><?php _e('Developed by', 'enhancedtext'); ?> <a href="http://pomelodesign.com">Pomelo Design</a></small></p>
 
 <?php
     }
@@ -182,11 +182,11 @@ else {
 /**
  * Register the widget
  */
-function custom_title_widget_init() {
-    register_widget('CustomTitleWidget');
+function enhanced_text_widget_init() {
+    register_widget('enhancedtextWidget');
 }
 
-add_action('widgets_init', 'custom_title_widget_init');
+add_action('widgets_init', 'enhanced_text_widget_init');
 
 add_filter( 'widget_title', function($title) {
     $title = str_replace('&lt;br&gt;', '<br>', $title);
